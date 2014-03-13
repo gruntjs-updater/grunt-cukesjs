@@ -1,0 +1,49 @@
+{
+  "name": "grunt-cukejs",
+  "description": "The best Grunt plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/eric.clifford/grunt-cukejs",
+  "author": {
+    "name": "Eric Clifford",
+    "email": "ericgclifford@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eric.clifford/grunt-cukejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eric.clifford/grunt-cukejs/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/eric.clifford/grunt-cukejs/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2",
+    "wd": "^0.2.10",
+    "chai": "^1.9.0",
+    "chai-as-promised": "^4.1.0",
+    "selenium-launcher": "^1.1.10",
+    "grunt-selenium-launcher": "^0.1.1"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "cucumber": "^0.4.0"
+  }
+}
