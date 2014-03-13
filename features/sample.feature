@@ -1,5 +1,6 @@
 Feature: Sample Feature
 
+  @test
   Scenario: Sample Scenario
     Given I load the wd demo
     When I interact with the demo

@@ -11,25 +11,26 @@
 module.exports = function(grunt) {
   var spawn = require('child_process').spawn;
 
-  grunt.registerMultiTask('cukejs', 'The best Grunt plugin ever.', function() {
+  grunt.registerMultiTask('cukejs', 'CucumberJS plugin for Grunt', function() {
     // Make this task async
     var done = this.async();
-
+    var self = this;
+  
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({
-      features: grunt.option('features'),
-      steps: grunt.option('steps'),
-      tags: grunt.option('tags'),
-      format: grunt.option('format'),
-      output: grunt.option('output')
+    grunt.util._.extend(self.options, {
+      features: grunt.option('features') || self.options.features,
+      steps: grunt.option('steps') || self.options.steps,
+      tags: grunt.option('tags') || self.options.tags,
+      format: grunt.option('format') || self.options.format || 'pretty',
+      output: grunt.option('output') || self.options.output || 'results.json'
     });
 
     // Build our command line arguments to send to cucumberjs
     var args = ['./node_modules/.bin/cucumber.js'];
-    if(options.features) args.push(features);
-    if(options.steps) args.push('-r', options.steps);
-    if(options.tags) args.push('-t', options.tags);
-    if(options.format) args.push('-f', options.format);
+    if(self.options.features) args.push(self.options.features);
+    if(self.options.steps) args.push('-r', self.options.steps);
+    if(self.options.tags) args.push('-t', self.options.tags);
+    if(self.options.format) args.push('-f', self.options.format);
 
     var cucumber = spawn('node', args);
 
@@ -46,7 +47,8 @@ module.exports = function(grunt) {
 
     cucumber.on('close', function(code) {
       var stdout = Buffer.concat(buffer);
-      grunt.file.write(options.output, buffer);
+      if(self.options.output) 
+        grunt.file.write(self.options.output, buffer);
       return done();
     });
 

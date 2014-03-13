@@ -22,7 +22,6 @@ module.exports = ->
     @browser
       .elementByCss('#comments').type('Bonjour!')
       .getValue().should.become('Bonjour!')
-      .saveScreenshot("done")
       .fin =>
         @browser.quit()
       .done -> 
