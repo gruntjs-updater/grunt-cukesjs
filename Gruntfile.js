@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     cukejs: {
       default_options: {
         options: {
-          format: 'json',
+          format: 'pretty',
           output: 'report.json'
         },
       },

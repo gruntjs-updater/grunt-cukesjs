@@ -15,10 +15,10 @@ World = (callback) ->
   #
   #
   @browser.on "status", (info) ->
-    # console.log info.cyan
+    console.log info.cyan
 
   @browser.on "command", (meth, path, data) ->
-    # console.log " > " + meth.yellow, path.grey, data or ""
+    console.log " > " + meth.yellow, path.grey, data or ""
 
   @browser.init({browserName: 'firefox'})
     .nodeify(callback)

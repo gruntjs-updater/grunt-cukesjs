@@ -1,6 +1,6 @@
 # grunt-cukejs
 
-> The best Grunt plugin ever.
+> An alternative grunt plugin for CucumberJS
 
 ## Getting Started
 This plugin requires Grunt `~0.4.2`
@@ -37,13 +37,31 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.features
 Type: `String`
 Default value: `',  '`
 
 A string value that is used to do something with whatever.
 
-#### options.punctuation
+#### options.steps
+Type: `String`
+Default value: `'.'`
+
+A string value that is used to do something else with whatever else.
+
+#### options.tags
+Type: `String`
+Default value: `'.'`
+
+A string value that is used to do something else with whatever else.
+
+#### options.output
+Type: `String`
+Default value: `'.'`
+
+A string value that is used to do something else with whatever else.
+
+#### options.format
 Type: `String`
 Default value: `'.'`
 

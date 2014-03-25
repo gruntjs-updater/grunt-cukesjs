@@ -1,6 +1,6 @@
 {
   "name": "grunt-cukejs",
-  "description": "The best Grunt plugin ever.",
+  "description": "grunt plugin for cucumberjs",
   "version": "0.1.0",
   "homepage": "https://github.com/eric.clifford/grunt-cukejs",
   "author": {
@@ -41,7 +41,9 @@
     "grunt": "~0.4.2"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "cucumberjs",
+    "cucumber"
   ],
   "dependencies": {
     "cucumber": "^0.4.0"

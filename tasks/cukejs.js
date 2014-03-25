@@ -11,7 +11,7 @@ module.exports = function(grunt) {
   var path = require('path');
   var spawn = require('child_process').spawn;
 
-  grunt.registerMultiTask('cukejs', 'CucumberJS plugin for Grunt', function() {
+  grunt.registerMultiTask('cukejs', 'grunt plugin for cucumberjs', function() {
     // Make this task async
     var done = this.async();
     var self = this;
@@ -52,8 +52,8 @@ module.exports = function(grunt) {
       var stdout = Buffer.concat(buffer);
       if(options.output) 
         grunt.file.write(options.output, buffer);
-      return done();
+      process.exit(code);
+      done();
     });
-
   });
 };
