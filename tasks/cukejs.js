@@ -52,8 +52,10 @@ module.exports = function(grunt) {
       var stdout = Buffer.concat(buffer);
       if(options.output) 
         grunt.file.write(options.output, buffer);
-      process.exit(code);
-      done();
+      if(code === 0)
+        done(true);
+      else
+        done(false)
     });
   });
 };
