@@ -1,6 +1,7 @@
 wd = require('wd')
 chai = require('chai')
 chaiAsPromised = require("chai-as-promised")
+require('colors')
 
 remote = wd.promiseChainRemote(process.env.SELENIUM_HUB)
 chai.use(chaiAsPromised)
@@ -20,7 +21,7 @@ World = (callback) ->
   @browser.on "command", (meth, path, data) ->
     console.log " > " + meth.yellow, path.grey, data or ""
 
-  @browser.init({browserName: 'firefox'})
+  @browser.init({browserName: 'phantomjs'})
     .nodeify(callback)
 
 

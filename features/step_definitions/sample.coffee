@@ -21,7 +21,7 @@ module.exports = ->
   @Then "I get the expected results", (callback) ->
     @browser
       .elementByCss('#comments').type('Bonjour!')
-      .getValue().should.become('Bonjour!!')
+      .getValue().should.become('Bonjour!')
       .fin =>
         @browser.quit()
       .done -> 
